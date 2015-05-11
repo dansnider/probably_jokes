@@ -11,25 +11,26 @@ namespace :get do
   desc "Rake task to populate db with new tweets"
   task :new_tweets => [:environment] do
 
+  tweets_to_add = []
+
     Comedian.all.each do |comedian|
       comic_tweets = client.user_timeline(comedian.screen_name, {exclude_replies: true, include_rts: false})
       comic_tweets.each do |tweet|
-        if !tweet.text.start_with? "." && !tweet.text.include? ("tickets" || "/" || "pm" || "watch" || "tomorrow" || "tonight" || "season" || "special" || "episode" || "@ComedyCentral" || "show") && tweet.text.length > 40
-          Tweet.create({
-            comedian_id: comedian.id, 
-            text: tweet.text,
-            retweet_count: tweet.retweet_count, 
-            favorite_count: tweet.favorite_count
-            })
-        end
+        tweets_to_add << Tweet.create({
+          comedian_id: comedian.id, 
+          text: tweet.text,
+          retweet_count: tweet.retweet_count, 
+          favorite_count: tweet.favorite_count
+          })
       end
+      Tweet.filter(tweets_to_add)
     end
     
   end
 end
 
 
-
+# 
 
 
 
