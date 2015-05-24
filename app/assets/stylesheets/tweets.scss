@@ -1,3 +1,64 @@
-// Place all the styles related to the Tweets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#tweet-container {
+	border: 1px solid black;
+}
+
+#main {
+	@include span-columns(8);
+	@include shift(2);
+	height: 350px;
+}
+
+h1, h2 {
+	display: inline;
+	position: relative;
+	top: -10px;
+	margin-left: 10px;
+	padding-bottom: 10px;
+}
+
+button {
+	font-size: 20px;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+p {
+	font-size: 20px;
+}
+
+#top {
+	height: 70px;
+}
+
+.avatar {
+	border-radius: 100%;
+	margin: 10px 10px 0 10px;
+}
+
+#vote-container {
+	float: right;
+	
+	#downvote {
+		padding: 5px 9px;
+	}
+}
+
+#joke-body {
+	margin: -3px;
+}
+
+#tweet-text {
+	border: 1px solid black;
+	padding: 10px;
+	margin: 10px;
+	height: 200px;
+}
+
+
+
