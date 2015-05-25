@@ -11,9 +11,12 @@
 		<div id="tweet-text">
 			<p id="joke-body"></p>
 		</div>
-
-		<p id="rt-count" class="icon-text"></p>
-		<p id="fav-count" class="icon-text"></p>
+		<div id="stats">
+			<%= image_tag('0303-loop2.svg', size: '20x20', id:'loop', class:'icon') %>
+			<p id="rt-count" class="icon-text"> 21</p>
+			<%= image_tag('0216-star-empty.svg', size: '22x22', id:'star', class:'icon') %>
+			<p id="fav-count" class="icon-text">23</p>
+		</div>
 
 	</div>
 
@@ -24,3 +27,4 @@
 
 	<button id="get-tweet">Get Tweet</button>
 </div>
+

@@ -44,6 +44,10 @@ p {
 #vote-container {
 	float: right;
 	
+	.vote {
+		width: 50px;
+	}
+
 	#downvote {
 		padding: 5px 9px;
 	}
@@ -51,6 +55,23 @@ p {
 
 #joke-body {
 	margin: -3px;
+}
+
+.icon-text {
+	display: inline;
+	width: 30px;
+}
+
+#stats {
+	margin: 0 0 8px 4px;
+	
+	p {
+		margin-right: 10px;
+	}
+}
+
+#loop {
+	margin-left: 10px;
 }
 
 #tweet-text {
