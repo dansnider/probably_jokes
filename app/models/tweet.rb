@@ -3,42 +3,7 @@ class Tweet < ActiveRecord::Base
 
   def self.filter(collection)
   	collection.each do |tweet|
-  		if tweet.text.match(
-        /\b
-        pm|
-        ticket|
-        weekend|
-        tonight|
-        tonite|
-        2night|
-        2nite|
-        tomorrow|
-        season|
-        watch|
-        special|
-        event|
-        donation|
-        episode|
-        show|
-        comedycentral|
-        trailer|
-        issue|
-        article|
-        album|
-        director|
-        netflix|
-        pre-order|
-        book|
-        follow|
-        snapchat|
-        live|
-        series|
-        pilot|
-        season|
-        congrats|
-        congratulations|
-        \b/ix
-        )
+  		if tweet.text.match(/\bpm|ticket|weekend|tonight|tonite|2night|2nite|tomorrow|season|watch|special|event|donation|episode|show|comedycentral|trailer|issue|article|album|director|netflix|pre-order|book|follow|snapchat|live|series|pilot|season|congrats|congratulations\b/i)
   			tweet.destroy!
   		elsif tweet.text.starts_with?(".", "@")
   			tweet.destroy!
@@ -50,7 +15,4 @@ class Tweet < ActiveRecord::Base
   	end
   	return collection
   end
-
-
-
 end

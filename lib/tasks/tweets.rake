@@ -35,7 +35,7 @@ namespace :get do
             new_tweet["media_type"] = "instagram"
           end
         end
-        new_tweet.save
+        new_tweet.save!
         tweets_to_add << new_tweet
       end
       Tweet.filter(tweets_to_add)
