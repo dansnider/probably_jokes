@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# Comedian.destroy_all
 
 client = Twitter::REST::Client.new do |config|
   config.consumer_key        = ENV["TWITTER_API_KEY"]
@@ -15,22 +6,12 @@ client = Twitter::REST::Client.new do |config|
   config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
 end
 
- # In the rake task, load tweets to memory, Tweet.all, 
- # and if tweet date is older than a certain point (30 days?)
- # and if the tweet has less than a certain rating, delete tweet.
-
- # have comedians, loop thru comedians, check for new unique tweets.
-
- # likes, tweets, comedians
-
  comedians = 
  [
  	"ronfunches",
  	"maxsilvestri",
- 	"chrisrock",
  	"hodgman",
  	"birbigs",
- 	"chelseahandler",
  	"sbellelauren",
  	"mulaney",
  	"thejoshpatten",
@@ -43,10 +24,9 @@ end
  	"scullymike",
  	"natashaleggero",
  	"dougstanhope",
- 	"chelseavperetti",
+ 	"chelseaperetti",
  	"amyschumer",
  	"robhuebel",
- 	"unforettable",
  	"michaelianblack",
  	"kellyoxford",
  	"eugenemirman",
@@ -75,50 +55,42 @@ end
  	"brendohare",
  	"dril",
  	"brendonwalsh",
- 	"timheidecker"
+ 	"timheidecker",
+ 	"thekidmero",
+ 	"iankarmel",
+ 	"fart",
+ 	"boring_as_heck",
+ 	"julieklausner",
+ 	"averymonsen",
+ 	"andylevy",
+ 	"samgrittner",
+ 	"mkupperman",
+ 	"damienfahey",
+ 	"fred_delicious",
+ 	"joshgondelman",
+ 	"mikedrucker",
+ 	"mallelis",
+ 	"tricialockwood",
+ 	"briangaar",
+ 	"mat_johnson",
+ 	"untresor",
+ 	"froghammer",
+ 	"mattytalks",
+ 	"hellolanemoore",
+ 	"weismanjake",
+ 	"bridger_w"
  ]
 
 comedians.each do |comic|
 	comedian = client.user(comic)
-	Comedian.create({
-		id_str: comedian.id, 
-		name: comedian.name, 
-		screen_name: comedian.screen_name, 
-		url: comedian.url.to_s,
-		profile_image_url: comedian.profile_image_url.to_s,
-		followers_count: comedian.followers_count
-		})
+	unless comedian.nil?
+		Comedian.create({
+			id_str: comedian.id, 
+			name: comedian.name, 
+			screen_name: comedian.screen_name, 
+			url: comedian.url.to_s,
+			profile_image_url: comedian.profile_image_url.to_s,
+			followers_count: comedian.followers_count
+			})
+	end
 end
- 
- # tweets = []
-
- # comedians.each do |comedian|
- # 	comic_tweets = client.user_timeline(comedian, {exclude_replies: true, include_rts: false})
- # 		comic_tweets.each do |tweet|
- # 			if !tweet.text.start_with? "."
- # 				tweets << tweet
- # 			end
- # 		end
- # end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

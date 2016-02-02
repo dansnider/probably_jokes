@@ -8,8 +8,6 @@ loadTweet = function(){
 	$('#joke-body').empty().fadeOut();
 	$('#name').empty().fadeOut();
 	$('#screen-name').empty().fadeOut();
-	$('#avatar-container').empty().fadeOut();
-	$('.avatar').remove().fadeOut();
 	$('.icon-text').empty().fadeOut();
 	$.ajax({
 	  method: "GET",
@@ -17,7 +15,7 @@ loadTweet = function(){
 	  url: tweetUrl,
 	  success: function(data){
 	  	console.log(data);
-	  	$('#name').before('<img class="avatar" src="' + data.comedian_image_url + '"/>').hide().fadeIn();
+	  	// $('#name').before('<img class="avatar" src="' + data.comedian_image_url + '"/>').hide().fadeIn();
 	  	$('#name').append(data.comedian_name).hide().fadeIn();
 	  	$('#screen-name').append("@" + data.comedian_screen_name).hide().fadeIn()
 	  	$('#joke-body').append(data.text).hide().fadeIn();

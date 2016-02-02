@@ -3,7 +3,42 @@ class Tweet < ActiveRecord::Base
 
   def self.filter(collection)
   	collection.each do |tweet|
-  		if tweet.text.match(/\bpm|ticket|weekend|tonight|tonite|2night|2nite|tomorrow|season|watch|special|episode|show|comedycentral|trailer|album\b/i)
+  		if tweet.text.match(
+        /\b
+        pm|
+        ticket|
+        weekend|
+        tonight|
+        tonite|
+        2night|
+        2nite|
+        tomorrow|
+        season|
+        watch|
+        special|
+        event|
+        donation|
+        episode|
+        show|
+        comedycentral|
+        trailer|
+        issue|
+        article|
+        album|
+        director|
+        netflix|
+        pre-order|
+        book|
+        follow|
+        snapchat|
+        live|
+        series|
+        pilot|
+        season|
+        congrats|
+        congratulations|
+        \b/ix
+        )
   			tweet.destroy!
   		elsif tweet.text.starts_with?(".", "@")
   			tweet.destroy!
