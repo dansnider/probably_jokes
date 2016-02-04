@@ -1,39 +1,15 @@
-<nav>
-	<a class="left">Home</a>
-	<a class="right">Best Of</a>
-	<a class="right">About</a>
-</nav>
+<section ng-app="probablyJokes" ng-controller="TweetController">
 
-<div id="main" class="container">
-	<div class="row">
-		<h1 class="col-md-4" id="name"></h1>
-		<h2 id="screen-name"></h2>
+	<div>
+		{{tweet}}
+<!-- 		{{ tweet.comedian_name }}
+		{{ tweet.comedian_screen_name }}
+		{{ tweet.text }}
+		Fav: {{ tweet.favorite_count }}
+		RT: {{ tweet.retweet_count }} -->
 	</div>
 
-	<div id="tweet-container">
-		
-		<p id="time-display"></p>
-		
-		<div id="tweet-text">
-			<p id="joke-body"></p>
-		</div>
-		<div class="row">
-			<p id="rt-count" class="col-md-1"></p>
-			<p id="fav-count" class="col-md-1"></p>
-		</div>
-	</div>
+<button ng-click="randomTweet()">Random</button>
 
-	<button>
-	  +1
-	</button>
-	
-	<button>
-	  -1
-	</button>
-
-	<button id="get-tweet">Get Tweet</button>
-</div>
-
-<blockquote class="instagram-media" data-instgrm-version="6" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:400px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/BAFo7B5AZBh/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A photo posted by Dan Snider (@surreal_talk)</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2016-01-03T19:10:02+00:00">Jan 3, 2016 at 11:10am PST</time></p></div></blockquote>
-<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+</section>
 
