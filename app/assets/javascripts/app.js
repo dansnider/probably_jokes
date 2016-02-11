@@ -1,14 +1,13 @@
 angular.module('probablyJokes', []);
 
 angular.module('probablyJokes')
-.controller('TweetController', function($scope, $http) {
+.controller('TweetController', function($scope, $compile) {
 
-	$scope.randomTweet = function() {
-		var url = "/tweet.json";
-		
-		$http.get(url).success(function(response) {
-			$scope.tweet = response;
-		});
+	$scope.addTweet = function() {
+		var el = $compile( "<tweet-card></tweet-card>" )($scope);
+		$('body').append(el);
 	}
+
+	// add tweet on tweet-card.destroy()
 
 });

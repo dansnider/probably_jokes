@@ -1,15 +1,11 @@
-<section ng-app="probablyJokes" ng-controller="TweetController">
+<div ng-controller="TweetController" ng-init="initApp()">
 
-	<div>
-		{{tweet}}
-<!-- 		{{ tweet.comedian_name }}
-		{{ tweet.comedian_screen_name }}
-		{{ tweet.text }}
-		Fav: {{ tweet.favorite_count }}
-		RT: {{ tweet.retweet_count }} -->
-	</div>
-
-<button ng-click="randomTweet()">Random</button>
-
-</section>
+	<tweet-card></tweet-card>
+	<tweet-card></tweet-card>
+	<br />
+	<br />
+	<br />
+	<br />
+ <button ng-click="addTweet()">ADD</button>
+</div>
 

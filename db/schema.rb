@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201023644) do
+ActiveRecord::Schema.define(version: 20160209023301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160201023644) do
     t.string   "comedian_image_url"
     t.string   "media"
     t.string   "media_type"
+    t.integer  "user_score"
   end
 
   add_index "tweets", ["comedian_id"], name: "index_tweets_on_comedian_id", using: :btree
