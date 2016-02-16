@@ -7,7 +7,7 @@ angular.module('probablyJokes')
 
 		init = function() {
 			$http.get(url).then(function(response) {
-				$scope.tweet = response;
+				$scope.tweet = response.data;
 			});
 		}
 
@@ -15,22 +15,14 @@ angular.module('probablyJokes')
 
 		$scope.upVote = function() {
 			var data = {
-				vote: {
-					id: $scope.tweet.data.id,
-					direction: "up"
-				}
+				id: $scope.tweet.id	
 			}
 			$http.put(url, data);
+			// $scope.$emit('cardShift');
 		}
 
-		$scope.downVote = function() {
-			var data = {
-				vote: {
-					id: $scope.tweet.data.id,
-					direction: "down"
-				}
-			}
-			$http.put(url, data);
+		$scope.nextTweet = function() {
+			$scope.$emit('cardShift');
 		}
 
 	}];

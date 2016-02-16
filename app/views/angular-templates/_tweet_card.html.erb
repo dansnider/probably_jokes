@@ -1,3 +1,18 @@
-<h1>{{tweet}}</h1>
-<button ng-click="upVote()"> UP </button>
-<button ng-click="downVote()"> DOWN </button>
+<div class="tweet-card" 
+		 data-tweet-id="{{tweet.id}}" 
+		 data-share-twitter="https://twitter.com/share?url=http://www.google.com&via=aboutdotcom&text={{tweet.text}}">
+	<a ng-href="{{tweet.comedian_url}}">
+		<img ng-src="{{tweet.comedian_image_url}}" />
+	</a>
+	<a ng-href="{{tweet.comedian_url}}">
+		<h2 ng-bind="tweet.comedian_screen_name"></h2>
+	</a>
+	<p ng-bind-html="tweet.linkified_text"></p>
+	<img ng-src="{{tweet.media}}" />
+	<br>
+	<button ng-click="upVote()"> UP </button>
+	<button ng-click="nextTweet()"> NEXT </button>
+
+	<button class="social-share" data-network="twitter">Twitter</button>
+<hr />
+</div>

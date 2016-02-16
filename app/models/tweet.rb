@@ -15,4 +15,21 @@ class Tweet < ActiveRecord::Base
   	end
   	return collection
   end
+
+  def self.linkify_links(text)
+    split_text = text.split(' ')
+    split_text.each do |word|
+      if word.starts_with?("https://t.co")
+        word.gsub!(word, '<a class="link" target="_blank" href="' + word + '">' + word + '</a>')
+      elsif word.starts_with?("#")
+        word.gsub!("#", "")
+        word.gsub!(word, '<a class="hashtag-link" target="_blank" href="https://twitter.com/hashtag/' + word + '">#' + word + '</a>')
+      elsif word.starts_with?("@")
+        word.gsub!("@", "")
+        word.gsub!(word, '<a class="user-link" target="_blank" href="https://twitter.com/' + word + '">@' + word + '</a>')
+      end
+    end
+    return split_text.join(" ")
+  end
+
 end
