@@ -13,3 +13,8 @@ PJ.openShareWindow = function(link) {
 						);
 		return popup;
 }
+
+PJ.shortenUrl = function(longUrl) {
+	var login = 'probablyjokes',
+			apiKey = 'R_c36df3a85ac84486aec1f05e495b5f82'
+}

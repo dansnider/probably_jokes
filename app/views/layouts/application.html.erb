@@ -8,10 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%= render "templates/nav" %>
 	<section ng-app="probablyJokes">
 		
 		<script type="text/ng-template" id="tweet-card.html">
-  		<%= render "angular-templates/tweet_card" %>
+  		<%= render "templates/tweet_card" %>
 		</script>
 
 		<%= yield %>

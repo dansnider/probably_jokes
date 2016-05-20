@@ -25,6 +25,16 @@ angular.module('probablyJokes')
 			$scope.$emit('cardShift');
 		}
 
+		$scope.twitterShare = function() {
+			var url = "https://twitter.com/share?url=" + 
+								"/tweet/" + $scope.tweet.id +
+								"&viaprobablyjokes&text=via @" +
+								$scope.comedian_screen_name + "- " +
+								$scope.tweet.text;
+
+			PJ.openShareWindow(url);
+		}
+
 	}];
 
 	return {
