@@ -1,12 +1,14 @@
 <a ng-href="{{tweet.comedian_url}}">
-	<img class="b-card__comedian_image" ng-src="{{tweet.comedian_image_url}}" />
+	<img class="card--comedian-image" ng-src="{{tweet.comedian_image_url}}" />
 </a>
 <a ng-href="{{tweet.comedian_url}}">
-	<h2 class="b-card__comedian_name" ng-bind="tweet.comedian_screen_name"></h2>
+	<h2 class="card--comedian-name" ng-bind="tweet.comedian_screen_name"></h2>
 </a>
-<p class="b-card__tweet_body" ng-bind-html="tweet.linkified_text"></p>
-<img class="b-card__tweet_image" ng-src="{{tweet.media}}" />
+<p class="card--tweet-body" ng-bind-html="tweet.linkified_text"></p>
+<img class="card--tweet-image" ng-src="{{tweet.media}}" />
 <br>
-<button class="b-card__button--up" ng-click="upVote()"> UP </button>
-<button class="b-card__button--down" ng-click="nextTweet()"> NEXT </button>
-<button class="b-card__button--share" ng-click="twitterShare()">Twitter</button>
+<div class="card--button-container">
+	<div class="button--share" ng-click="twitterShare()">Twitter</div>
+	<div class="button" ng-click="upVote()"> UP </div>
+	<div class="button" ng-click="nextTweet()"> NEXT </div>
+</div>

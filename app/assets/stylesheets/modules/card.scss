@@ -1,0 +1,40 @@
+$module: 'card';
+
+.card {
+	position: absolute;
+	width: 100%;
+	border: 1px solid black;
+	margin: 0 auto;
+	min-height: 30em;
+	background-color: white;
+	box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.4);
+	transition: all .3s ease-in;
+
+	&--comedian-image {
+
+	}
+
+	&--comedian-name {
+
+	}
+
+	&--tweet-body {
+
+	}
+
+	&--tweet-image {
+		max-width: 100%;
+		max-height: 60vh;
+		margin: 0 auto;
+	}
+
+	&--button-container {
+		position: absolute;
+		bottom: 0;
+		height: 6em;
+		width: 100%;
+		border: 3px solid tomato;
+		display: flex;
+		justify-content: flex-end;
+	}
+}

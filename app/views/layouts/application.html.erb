@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Probably Jokes</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<%= render "templates/nav" %>
-	<section ng-app="probablyJokes">
-		
-		<script type="text/ng-template" id="tweet-card.html">
-  		<%= render "templates/tweet_card" %>
-		</script>
+	<head>
+	  <title>Probably Jokes</title>
+	  <%= stylesheet_link_tag    'application', media: 'all' %>
+	  <%= javascript_include_tag 'application' %>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
 
-		<%= yield %>
+		<section id="header">
+			<%= render "templates/nav" %>
+		</section>
 
-	</section>
-</body>
+		<section id="main" ng-app="probablyJokes">
+			<script type="text/ng-template" id="tweet-card.html">
+	  		<%= render "templates/tweet_card" %>
+			</script>
+			<%= yield %>
+		</section>
+
+<!-- 		<section id="footer">
+			<%= render "templates/footer" %>
+		</section> -->
+
+	</body>
 </html>
