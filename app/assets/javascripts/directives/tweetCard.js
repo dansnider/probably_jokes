@@ -25,6 +25,14 @@ angular.module('probablyJokes')
 			$scope.$emit('cardShift');
 		}
 
+		$scope.showImage = function() {
+			var $image = $('.card--tweet-image'),
+					$button = $('.card--display-button');
+
+			$button.addClass('is-hidden');
+			$image.addClass('is-displayed');
+		}
+
 		$scope.twitterShare = function() {
 			var url = "https://twitter.com/share?url=" + 
 								"/tweet/" + $scope.tweet.id +

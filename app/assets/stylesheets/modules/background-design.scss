@@ -1,0 +1,22 @@
+.line {
+  margin: 10px 0;
+  background-color: #96FDFF;
+  display: block;
+}
+
+#background-design {
+	position: relative;
+	z-index: -1;
+	transform: rotate(315deg);
+}
+
+    
+@for $i from 1 through 100 {
+  .line:nth-child(#{$i}) {
+  	width: random(1280) + 800 + px;
+  	height: random(40) + 10 + px;
+  }	
+}
+
+    
+    

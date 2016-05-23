@@ -5,7 +5,8 @@
 	<h2 class="card--comedian-name" ng-bind="tweet.comedian_screen_name"></h2>
 </a>
 <p class="card--tweet-body" ng-bind-html="tweet.linkified_text"></p>
-<img class="card--tweet-image" ng-src="{{tweet.media}}" />
+<a href="#" ng-if="tweet.media" class="card--display-button" ng-click="showImage()">Show Image</a>
+<img ng-if="tweet.media" class="card--tweet-image" ng-src="{{tweet.media}}" />
 <br>
 <div class="card--button-container">
 	<div class="button--share" ng-click="twitterShare()">Twitter</div>

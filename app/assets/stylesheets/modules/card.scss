@@ -5,36 +5,49 @@ $module: 'card';
 	width: 100%;
 	border: 1px solid black;
 	margin: 0 auto;
-	min-height: 30em;
+	min-height: 32em;
+	top: .5em;
 	background-color: white;
-	box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.4);
-	transition: all .3s ease-in;
+	box-shadow: -2px 2px 0px 0px rgba(0,0,0,0.4);
+	transition: all .3s ease-in-out;
 
 	&--comedian-image {
-
+		margin: 1.5em 1em 0 2em;
+		border-radius: 100%;
+		display: inline;
 	}
 
 	&--comedian-name {
-
+		display: inline;
+		font-size: 1.5em;
 	}
 
 	&--tweet-body {
-
+		padding: 2em 2em 0 2em;
 	}
 
 	&--tweet-image {
+		display: none;
 		max-width: 100%;
-		max-height: 60vh;
+		max-height: 16em;
 		margin: 0 auto;
+	}
+
+	&--display-button {
+		position: relative;
+		top: .8em;
+		margin: 1em 0 0 2em;
 	}
 
 	&--button-container {
 		position: absolute;
 		bottom: 0;
-		height: 6em;
 		width: 100%;
-		border: 3px solid tomato;
 		display: flex;
 		justify-content: flex-end;
+
+		.button:nth-of-type(2) {
+			margin-right: 0;
+		}
 	}
 }

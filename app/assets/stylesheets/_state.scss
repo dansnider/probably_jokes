@@ -1,3 +1,11 @@
 .is-offscreen {
 	transform: translate(60em,6em);
 }
+
+.is-displayed {
+	display: block;
+}
+
+.is-hidden {
+	display: none;
+}
